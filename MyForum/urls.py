@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from forum import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('adminwall/', views.adminshowwall),
+    path('post/', views.postPosting),
+    path('delete_post', views.deletePosting),
 ]

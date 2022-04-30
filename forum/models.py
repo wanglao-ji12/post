@@ -15,11 +15,12 @@ class Comment(models.Model):
 
 
 class Posting(models.Model):
-    landlord_id=models.OneToOneField(User,on_delete=models.DO_NOTHING)
-    p_Title=models.CharField(max_length=20)
-    p_Describtion=models.CharField(max_length=200)
-    p_Date=models.DateField()
-    p_Comments_id=models.ForeignKey(Comment,on_delete=models.CASCADE)
+    landlord_id=models.OneToOneField(User, on_delete=models.DO_NOTHING)#发帖人
+    p_Title=models.CharField(max_length=20)#主题
+    p_Describtion=models.CharField(max_length=200)#内容
+    p_Date=models.DateField()#时间
+    p_Comments_id=models.ForeignKey(Comment,on_delete=models.CASCADE)#评论
+    is_active=models.BooleanField('是否伪删除',default=True)#删除
 
 
 
